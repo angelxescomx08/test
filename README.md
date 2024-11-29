@@ -1,17 +1,15 @@
-# Testing
+# 1-testing
 
-Project for learning how to test a project using jest.
-
-## Getting Started
-
-install all dependencies
+To install dependencies:
 
 ```bash
 bun install
 ```
 
-## Running the tests
+To run:
 
 ```bash
-bun test
+bun run index.ts
 ```
+
+This project was created using `bun init` in bun v1.1.27. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

@@ -1,9 +1,10 @@
-import { toUpperCase } from '../app/Utils';
-
 describe('Utils', () => {
-  it('should uppercase', () => {
-    const text = 'hello';
+  it('should return the uppercase text', () => {
+    const text = 'Hello, world!';
+    const expected = 'HELLO, WORLD!';
 
-    expect(toUpperCase(text)).toBe('HELLO');
+    const result = text.toUpperCase();
+
+    expect(result).toBe(expected);
   });
-});
+})
