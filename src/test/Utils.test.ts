@@ -1,4 +1,4 @@
-import { getStringInfo } from '../app/utils'
+import { getStringInfo, toUpperCase } from '../app/utils'
 
 describe('Utils', () => {
   it('should return the uppercase text', () => {
@@ -8,6 +8,17 @@ describe('Utils', () => {
     const result = text.toUpperCase()
 
     expect(result).toBe(expected)
+  })
+
+  describe('toUpperCase', () => {
+    it.only.each([
+      { text: 'Hello, world!', expected: 'HELLO, WORLD!' },
+      { text: 'My name is John Doe', expected: 'MY NAME IS JOHN DOE' },
+      { text: '123', expected: '123' },
+    ])('$text should return $expected', ({ text, expected }) => {
+      const result = toUpperCase(text)
+      expect(result).toBe(expected)
+    })
   })
 
   describe('getStringInfo for arg My-String should', ()=>{
