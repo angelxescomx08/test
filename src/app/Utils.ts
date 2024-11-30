@@ -1,5 +1,5 @@
 export function toUpperCase(value: string): string {
-  return value.toUpperCase();
+  return value.toUpperCase()
 }
 
 export type stringInfo = {
@@ -7,7 +7,7 @@ export type stringInfo = {
   upperCase: string,
   characters: string[],
   length: number,
-  extraInfo: Object | undefined
+  extraInfo: object | undefined
 }
 export function getStringInfo(arg: string): stringInfo{
   return {
