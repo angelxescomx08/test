@@ -10,7 +10,7 @@ describe('Utils', () => {
     expect(result).toBe(expected)
   })
 
-  describe.only('StringUtils', () => {
+  describe('StringUtils', () => {
     let stringUtils: StringUtils
 
     beforeEach(() => {
@@ -24,6 +24,13 @@ describe('Utils', () => {
       const result = stringUtils.toUpperCase(text)
 
       expect(result).toBe(expected)
+    })
+
+    describe('Error handling', () => {
+      it('should throw an error if the value is empty', () => {
+        const text = ''
+        expect(() => stringUtils.toUpperCase(text)).toThrow('Value is required')
+      })
     })
   })
 

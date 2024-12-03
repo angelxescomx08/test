@@ -1,5 +1,8 @@
 export class StringUtils {
   public toUpperCase(value: string): string {
+    if(!value){
+      throw new Error('Value is required')
+    }
     return toUpperCase(value)
   }
 }
