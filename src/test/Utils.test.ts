@@ -1,4 +1,4 @@
-import { getStringInfo, toUpperCase } from '../app/utils'
+import { getStringInfo, StringUtils, toUpperCase } from '../app/utils'
 
 describe('Utils', () => {
   it('should return the uppercase text', () => {
@@ -10,8 +10,25 @@ describe('Utils', () => {
     expect(result).toBe(expected)
   })
 
+  describe.only('StringUtils', () => {
+    let stringUtils: StringUtils
+
+    beforeEach(() => {
+      stringUtils = new StringUtils()
+    })
+
+    it('should return the uppercase text', () => {
+      const text = 'Hello, world!'
+      const expected = 'HELLO, WORLD!'
+
+      const result = stringUtils.toUpperCase(text)
+
+      expect(result).toBe(expected)
+    })
+  })
+
   describe('toUpperCase', () => {
-    it.only.each([
+    it.each([
       { text: 'Hello, world!', expected: 'HELLO, WORLD!' },
       { text: 'My name is John Doe', expected: 'MY NAME IS JOHN DOE' },
       { text: '123', expected: '123' },
